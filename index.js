@@ -93,6 +93,7 @@ var biggestIncrease = [0 , 0];
 var biggestDecrease = [0 , 0];
 var change;
 var netTotal = 0;
+noMonths = finances.length - 1;
 
 // The total number of months included in the dataset.
 
@@ -106,7 +107,21 @@ for (let index = 0; index < finances.length; index++) {
 
 console.log("Net total amount of Profit/Losses over the entire period: $" + netTotal);
 
-// add everything together
+//creating loop to go through each element in the string starting with the second one
+for (var i = 1; i < finances.length; i++) {
+    // adding together all the changes in Profit/Losses over the entire period
+    total = total + (finances[i][1] - finances[i-1][1]);
+}
+
+// calculating average change by dividing total by number of months
+var avgChange = total / noMonths;
+// Adding toFixed(2) to convert to string and round string to 2 decimal places
+console.log("Average change: $" + avgChange.toFixed(2));
+
+
+
+
+
 
 // probably a loop
 // The average of the changes in Profit/Losses over the entire period.
@@ -122,8 +137,8 @@ console.log("Net total amount of Profit/Losses over the entire period: $" + netT
 // console output format!
 // Financial Analysis
 // ----------------------------
-// Total Months: 25
-// Total: $2561231
+// Total Months: 86
+// Total: $38382578
 // Average  Change: $-2315.12
 // Greatest Increase in Profits: Feb-2012 ($1926159)
 // Greatest Decrease in Profits: Sep-2013 ($-2196167)
