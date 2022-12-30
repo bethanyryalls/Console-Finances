@@ -89,9 +89,6 @@ var finances = [
 
 var totalMonths = finances.length;
 var total = 0;
-// var biggestIncrease = [0 , 0];
-// var biggestDecrease = [0 , 0];
-var change;
 var netTotal = 0;
 noMonths = finances.length - 1;
 
@@ -101,6 +98,7 @@ console.log("Total number of months included in the dataset: " + totalMonths);
 
 // The net total amount of Profit/Losses over the entire period.
 
+// creating loop to add all sum values together
 for (let index = 0; index < finances.length; index++) {
     netTotal += finances[index][1];
 }
@@ -115,6 +113,7 @@ for (var i = 1; i < finances.length; i++) {
 
 // calculating average change by dividing total by number of months
 var avgChange = total / noMonths;
+
 // Adding toFixed(2) to convert to string and round string to 2 decimal places
 console.log("Average change: $" + avgChange.toFixed(2));
 
