@@ -89,8 +89,8 @@ var finances = [
 
 var totalMonths = finances.length;
 var total = 0;
-var biggestIncrease = [0 , 0];
-var biggestDecrease = [0 , 0];
+// var biggestIncrease = [0 , 0];
+// var biggestDecrease = [0 , 0];
 var change;
 var netTotal = 0;
 noMonths = finances.length - 1;
@@ -119,26 +119,28 @@ var avgChange = total / noMonths;
 console.log("Average change: $" + avgChange.toFixed(2));
 
 
+// calculating the greatest increase in profits
 
+// setting values for biggest increase and biggest increase index and date
+var biggestIncrease = 0;
+var biggestIncreaseIndex = 0;
+var biggestIncreaseDate = 0;
 
+for (var i = 0; i < finances.length; i++) {
+    var prevIncrease;
+    if (i > 0) {
+        prevIncrease = finances[i-1][1];
+        } else {
+            prevIncrease = 0;
+        }
 
+        // calculating difference between current and previous months, if current is higher increase then replace biggestIncrease
+        var currentIncrease = finances[i][1] - prevIncrease;
+        if (currentIncrease > biggestIncrease) {
+            biggestIncrease = currentIncrease;
+            biggestIncreaseIndex = i;
+            biggestIncreaseDate = finances[i][0];
+        }
+    }
 
-// probably a loop
-// The average of the changes in Profit/Losses over the entire period.
-// calculate each change by subtracting the previous month from this month
-// You will need to track what the total change in profits is from month to month and then find the average.
-// (Total/total number of changes) ===> total change/(months - 1)
-// maybe put all the changes into an array? using .push(...) ?
-// The greatest increase in profits (date and amount) over the entire period.
-// start with 0
-//   check the last increase. If it's bigger than 0, keep track of the new biggest one.
-//   in a loop
-// The greatest decrease in losses (date and amount) over the entire period.
-// console output format!
-// Financial Analysis
-// ----------------------------
-// Total Months: 86
-// Total: $38382578
-// Average  Change: $-2315.12
-// Greatest Increase in Profits: Feb-2012 ($1926159)
-// Greatest Decrease in Profits: Sep-2013 ($-2196167)
+        console.log("Greatest increase in profits: " + biggestIncreaseDate + " ($" + biggestIncrease + ")");
