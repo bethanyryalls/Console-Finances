@@ -11,7 +11,7 @@ The goals for the project include:
 4. Display the greatest increase in profits, including the date and amount, over the entire period
 5. Display the greatest decrease in losses, including the date and amount, over the entire period
 
-To visit the website, [please click this link.](------LINKHERE-------)
+To visit the website, [please click this link.](https://bethanyryalls.github.io/Console-Finances/)
 
 ## Table of Contents
 - [Description](#description)
@@ -27,7 +27,7 @@ The following screenshot shows the console displaying the above criteria
     ![Console Finances by Bethany Ryalls](images/console-finances-screenshot.png)
 
 ### Users
-To visit the website, [please click this link.](------LINKHERE-------)
+To visit the website, [please click this link.](https://bethanyryalls.github.io/Console-Finances/)
 
 You will be directed to the webpage where you can then inspect the console to view the financial calculations.
 
