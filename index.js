@@ -129,6 +129,7 @@ var biggestIncrease = 0;
 var biggestIncreaseIndex = 0;
 var biggestIncreaseDate = 0;
 
+// creating a loop to go through each element of the finances, setting the previous increase value if it is bigger than 0
 for (var i = 0; i < finances.length; i++) {
     var prevIncrease;
     if (i > 0) {
